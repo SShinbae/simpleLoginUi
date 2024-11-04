@@ -8,9 +8,28 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.viewsanduielement.databinding.ActivityRegisterBinding;
+
 public class ActivityRegister extends AppCompatActivity {
+
+    ActivityRegisterBinding binding;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+        binding = ActivityRegisterBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
+
+
+    }
+
     @Override
     protected void onStart() {
+        Intent intent = getIntent();
+        binding.editTextTextPersonName.setText(intent.getStringExtra("username"));
+        binding.editTexTextPassword.setText(intent.getStringExtra("password"));
+
         super.onStart();
     }
 
@@ -31,6 +50,7 @@ public class ActivityRegister extends AppCompatActivity {
 
     @Override
     protected void onPause() {
+        fnSaveState();
         super.onPause();
     }
 
@@ -39,14 +59,6 @@ public class ActivityRegister extends AppCompatActivity {
         super.onRestart();
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_register);
 
-
-
-    }
 
 }

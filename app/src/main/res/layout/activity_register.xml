@@ -15,7 +15,7 @@
         android:orientation="horizontal"></LinearLayout>
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/editTextTextPersonName"
         android:layout_width="match_parent"
         android:layout_height="61dp"
         android:ems="10"
