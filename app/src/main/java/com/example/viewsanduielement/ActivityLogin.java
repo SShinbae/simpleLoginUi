@@ -2,6 +2,7 @@ package com.example.viewsanduielement;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,14 +24,19 @@ public class ActivityLogin extends AppCompatActivity {
     }
 
     public void fnLogin(View view) {
+
         String username = binding.editTextTextPersonName.getText().toString();
         String password = binding.editTextTextPassword.getText().toString();
+
+
         Intent intent = new Intent(this,ActivityRegister.class);
         intent.putExtra("username",username);
-        intent.putExtra("password", password);
+//        intent.putExtra("password", password):
+        intent.putExtra("password", binding.editTextTextPassword.toString());
         startActivity(intent);
-
     }
+
+
 
     @Override
     protected void onStop() {

@@ -23,6 +23,14 @@
         android:inputType="text" />
 
     <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+       android:hint="@string/user_pwd" />
+
+    <EditText
         android:id="@+id/editTextText4"
         android:layout_width="match_parent"
         android:layout_height="59dp"
@@ -39,7 +47,7 @@
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/editTextText6"
+        android:id="@+id/editTextDOB"
         android:layout_width="match_parent"
         android:layout_height="62dp"
         android:ems="10"

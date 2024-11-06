@@ -7,4 +7,9 @@
     <string name="user_regEmail">Your email@email.com</string>
     <string name="user_regContactNum">Contact number example: +60123456789</string>
     <string name="user_regDOB">Your DOB eg: 27/8/2000</string>
+    <string name="user_expanses">Expanse For</string>
+    <string name="user_date">10/11/2024</string>
+    <string name="user_range">RM</string>
+    <string name="btn_save">Save</string>
+
 </resources>
