@@ -31,10 +31,10 @@
                 android:layout_height="57dp"
                 android:ems="10"
                 android:hint="@string/user_date"
-                android:inputType="text" />
+                android:inputType="date" />
 
             <EditText
-                android:id="@+id/editTexTotal"
+                android:id="@+id/editTextTotal"
                 android:layout_width="match_parent"
                 android:layout_height="57dp"
                 android:ems="10"

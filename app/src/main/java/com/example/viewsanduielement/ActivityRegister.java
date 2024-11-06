@@ -2,6 +2,7 @@ package com.example.viewsanduielement;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -24,9 +25,15 @@ public class ActivityRegister extends AppCompatActivity {
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
+        binding.button.setOnClickListener(this::expanse);
 
     }
+
+    private void expanse(View view) {
+        Intent intent = new Intent(this, ActivityExpense.class);
+        startActivity(intent);
+    }
+
 
     private void calculateAge() {
         String yearOfBirthString = binding.editTextDOB.getText().toString();
@@ -55,6 +62,9 @@ public class ActivityRegister extends AppCompatActivity {
 
 
     }
+
+
+
 
     @Override
     protected void onStop() {
