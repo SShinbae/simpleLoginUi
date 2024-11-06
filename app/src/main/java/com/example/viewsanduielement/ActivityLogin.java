@@ -31,8 +31,8 @@ public class ActivityLogin extends AppCompatActivity {
 
         Intent intent = new Intent(this,ActivityRegister.class);
         intent.putExtra("username",username);
-//        intent.putExtra("password", password):
-        intent.putExtra("password", binding.editTextTextPassword.toString());
+        //intent.putExtra("password", binding.editTextTextPassword.toString());
+        intent.putExtra("password",password);
         startActivity(intent);
     }
 

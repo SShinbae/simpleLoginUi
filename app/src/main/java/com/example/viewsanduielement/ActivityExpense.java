@@ -25,7 +25,7 @@ ActivityExpenseBinding binding;
         binding = ActivityExpenseBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        Integer[] numbers = new Integer[15];K
+        Integer[] numbers = new Integer[15];
         for (int i = 0; i < 15; i++) {
             numbers[i] = i;
         }

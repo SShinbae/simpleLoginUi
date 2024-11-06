@@ -5,10 +5,7 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="login">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="ActivityExpense">
+      <SelectionState runConfigName="ActivityLogin">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
