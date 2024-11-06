@@ -21,7 +21,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.171">
+        app:layout_constraintVertical_bias="0.192">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextTextPersonName"
@@ -106,11 +106,11 @@
         android:hint="@string/user_regDOB"
 
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.587">
+        app:layout_constraintVertical_bias="0.805">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextDOB"
@@ -119,36 +119,34 @@
             android:ems="15"
             android:inputType="text" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:text="Gender"
+            tools:layout_editor_absoluteX="48dp"
+            tools:layout_editor_absoluteY="463dp" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Gender"
-        tools:layout_editor_absoluteX="48dp"
-        tools:layout_editor_absoluteY="463dp" />
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:text="Female"
+            tools:layout_editor_absoluteX="128dp"
+            tools:layout_editor_absoluteY="491dp" />
 
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_weight="1"
-        android:text="Female"
-        tools:layout_editor_absoluteX="128dp"
-        tools:layout_editor_absoluteY="491dp" />
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:layout_weight="1"
+            android:text="Male"
+            tools:layout_editor_absoluteX="48dp"
+            tools:layout_editor_absoluteY="490dp" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="51dp"
-        android:layout_weight="1"
-        android:text="Male"
-        tools:layout_editor_absoluteX="48dp"
-        tools:layout_editor_absoluteY="490dp" />
-
-    <Button
+        <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -157,7 +155,7 @@
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="576dp" />
 
-
+    </com.google.android.material.textfield.TextInputLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
