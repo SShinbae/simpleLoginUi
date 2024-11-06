@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -9,83 +9,155 @@
     app:layoutDescription="@xml/activity_register_scene"
     tools:context=".ActivityRegister">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="84dp"
-        android:orientation="horizontal"></LinearLayout>
+    <com.google.android.material.textfield.TextInputLayout
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="match_parent"
-        android:layout_height="61dp"
-        android:ems="10"
-        android:hint="@string/user_regname"
-        android:inputType="text" />
-
-    <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/user_name"
         android:inputType="text"
-       android:hint="@string/user_pwd" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.171">
 
-    <EditText
-        android:id="@+id/editTextText4"
-        android:layout_width="match_parent"
-        android:layout_height="59dp"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:ems="15"
+            android:inputType="text" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/user_pwd"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.284"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="15"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/user_regEmail"
-        android:inputType="text" />
 
-    <EditText
-        android:id="@+id/editTextText5"
-        android:layout_width="match_parent"
-        android:layout_height="57dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.37">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editEmail"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:ems="15"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/user_regContactNum"
-        android:inputType="text" />
 
-    <EditText
-        android:id="@+id/editTextDOB"
-        android:layout_width="match_parent"
-        android:layout_height="62dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editNum"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:ems="15"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/user_regDOB"
-        android:inputType="text" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:orientation="horizontal">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.587">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Gender" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextDOB"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:ems="15"
+            android:inputType="text" />
 
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="wrap_content"
-            android:layout_height="51dp"
-            android:layout_weight="1"
-            android:text="Male" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <CheckBox
-            android:id="@+id/checkBox2"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:text="Female" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Gender"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="463dp" />
 
-    </LinearLayout>
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:text="Female"
+        tools:layout_editor_absoluteX="128dp"
+        tools:layout_editor_absoluteY="491dp" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="51dp"
+        android:layout_weight="1"
+        android:text="Male"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="490dp" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Button" />
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:text="Button"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="576dp" />
 
-</LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
