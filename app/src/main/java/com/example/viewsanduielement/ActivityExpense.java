@@ -46,6 +46,7 @@ ActivityExpenseBinding binding;
                 fnInvokeDatePicker();
             }
         });
+        //return false;
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

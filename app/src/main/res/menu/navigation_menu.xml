@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+
+    >
+    <item
+        android:id="@+id/nav_login_activity"
+        android:enabled="true"
+        android:icon="@drawable/baseline_add_home_24"
+        android:title="Login"
+        android:visible="true" />
+
+    <item
+        android:id="@+id/nav_register_activity"
+        android:icon="@drawable/baseline_add_home_24"
+        android:title="Register"/>
+
+    <item
+        android:id="@+id/nav_expenses_activity"
+        android:icon="@drawable/baseline_add_home_24"
+        android:title="Expenses Form"/>
+</menu>
