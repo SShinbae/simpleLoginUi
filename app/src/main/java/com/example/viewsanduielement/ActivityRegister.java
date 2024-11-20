@@ -34,7 +34,7 @@ public class ActivityRegister extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         drawerLayout = binding.main; //nama id dalam [.xml] file
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout, R.string.nav_open, R.string.nav_close);
         actionBarDrawerToggle.syncState();
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -53,7 +53,7 @@ public class ActivityRegister extends AppCompatActivity {
                 } else if (id == R.id.nav_register_activity) {
                     intent = new Intent(ActivityRegister.this, ActivityRegister.class);
                 } else if (id == R.id.nav_expenses_activity) {
-                    intent = new Intent(ActivityRegister.this, MainActivity.class);
+                    intent = new Intent(ActivityRegister.this, ActivityExpense.class);
                 } else {
                     return false;
                 }

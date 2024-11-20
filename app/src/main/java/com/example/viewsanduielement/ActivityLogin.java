@@ -48,7 +48,7 @@ public class ActivityLogin extends AppCompatActivity {
                 } else if (id == R.id.nav_register_activity) {
                     intent = new Intent(ActivityLogin.this, ActivityRegister.class);
                 } else if (id == R.id.nav_expenses_activity) {
-                    intent = new Intent(ActivityLogin.this, MainActivity.class);
+                    intent = new Intent(ActivityLogin.this, ActivityExpense.class);
                 } else {
                     return false;
                 }
