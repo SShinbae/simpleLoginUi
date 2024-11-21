@@ -13,5 +13,6 @@
     <string name="btn_save">Save</string>
     <string name="nav_open">Open Navigation</string>
     <string name="nav_close">Close Navigation</string>
+    <string name="user_total">Total</string>
 
 </resources>
