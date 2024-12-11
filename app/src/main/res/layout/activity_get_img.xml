@@ -20,7 +20,7 @@
             <ImageView
                 android:id="@+id/imgVwSelfie"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="264dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
