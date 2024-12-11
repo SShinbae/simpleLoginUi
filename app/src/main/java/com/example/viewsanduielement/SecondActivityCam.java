@@ -35,8 +35,8 @@ public class SecondActivityCam extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityGetImgBinding.inflate(getLayoutInflater());
-
-        setContentView(R.layout.activity_get_img);
+        //guna binding.getRoot(), sebab dah guna binding, kalau belum takyah guna binding.getRoot()
+        setContentView(binding.getRoot());
 
         executor = Executors.newSingleThreadExecutor();
         handler = new Handler(Looper.getMainLooper());
@@ -44,10 +44,12 @@ public class SecondActivityCam extends Activity {
 
 
         binding.btnAsyncTask.setOnClickListener(view -> {
+
             ConnectivityManager manager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
             NetworkInfo networkInfo = manager.getActiveNetworkInfo();
 
             if (networkInfo != null && networkInfo.isConnected()) {
+
                 executor.execute(() -> {
                     try {
                         URL ImageURL = new URL("https://ftmk.utem.edu.my/web/wp-content/uploads/2020/02/cropped-Logo-FTMK.png");
@@ -70,6 +72,7 @@ public class SecondActivityCam extends Activity {
                 Toast.makeText(this, "No Network!! Please add data plan or connect to wifi network!", Toast.LENGTH_SHORT).show();
             }
         });
+
 
 
     }
