@@ -33,7 +33,7 @@ public class SecondActivityCam extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityGetImgBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_get_img);
 
         executor = Executors.newSingleThreadExecutor();
         handler = new Handler(Looper.getMainLooper());

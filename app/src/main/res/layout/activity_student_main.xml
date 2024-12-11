@@ -27,43 +27,43 @@
             <EditText
                 android:id="@+id/strStudNo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="58dp"
                 android:ems="10"
-                android:inputType="text"
-                android:hint="Your Student Number" />
+                android:hint="Your Student Number"
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/strEmail"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="64dp"
                 android:ems="10"
-                android:inputType="text"
-                android:hint="your_email@utem.edu.my" />
+                android:hint="your_email@utem.edu.my"
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/strBirthdate"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="59dp"
                 android:ems="10"
-                android:inputType="date"
-                android:hint="Your Birthday" />
+                android:hint="Your Birthday"
+                android:inputType="date" />
 
             <RadioGroup
                 android:id="@+id/rgGender"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="53dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/strGender"
-                    android:layout_width="236dp"
+                    android:layout_width="214dp"
                     android:layout_height="wrap_content"
                     android:text="Gender: " />
 
                 <RadioButton
                     android:id="@+id/rbMale"
-                    android:layout_width="wrap_content"
-                    android:layout_height="42dp"
+                    android:layout_width="92dp"
+                    android:layout_height="53dp"
                     android:text="Male" />
 
                 <RadioButton
@@ -80,12 +80,13 @@
                 android:text="State Origin" />
 
             <Spinner
-                android:id="@+id/strState"
+                android:id="@+id/spnState"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="48dp"
+                android:entries="@array/state_arrays" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/floatingActionButton2"
+                android:id="@+id/fabAdd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -93,6 +94,7 @@
                 app:srcCompat="@drawable/baseline_add_home_24" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/strState"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
