@@ -3,6 +3,7 @@ package com.example.viewsanduielement;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.View;
 
 import android.widget.DatePicker;
@@ -61,8 +62,8 @@ public class ActivityStudentMain extends AppCompatActivity {
         students = new Vector<>();
         adapter = new Student.StudentViewHolder.StudentAdapter(getLayoutInflater(),students);
 
-        binding.strState.setAdapter(adapter);
-        binding.strState.setLayoutManager(new LinearLayoutManager(this));
+        binding.rcvStud.setAdapter(adapter);
+        binding.rcvStud.setLayoutManager(new LinearLayoutManager(this));
 
     }
 
@@ -81,10 +82,15 @@ public class ActivityStudentMain extends AppCompatActivity {
             gender = binding.rbFemale.getText().toString();
         }
 
-        student = new Student(fullname, studNo, email, gender, birth, state);
+        try {
+            student = new Student(fullname, studNo, email, gender, birth, state);
 
-        students.add(student);
-        adapter.notifyItemInserted(students.size());
+            students.add(student);
+            adapter.notifyItemInserted(students.size());
+        }catch (Exception f){
+            Log.e("ActivityStudentMain", "Error in fnAdd", f);
+        }
+
     }
 
 }
