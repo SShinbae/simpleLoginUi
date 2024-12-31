@@ -34,6 +34,7 @@ android {
     buildFeatures {
         compose true
         viewBinding true
+        dataBinding true
     }
     dependencies {
         implementation 'com.github.bumptech.glide:glide:4.15.1' // Update to the latest version
