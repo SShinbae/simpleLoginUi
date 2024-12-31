@@ -65,8 +65,9 @@ public class ActivityStudentMain extends AppCompatActivity {
                 datePicker = new DatePickerDialog(ActivityStudentMain.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                       int monthOfYear = month + 1;
-                        binding.strBirthdate.setText(dayOfMonth + "/" + monthOfYear + "/" + year);
+                       //Format date as YYYY/MM/DD
+                        String formattedDate = String.format("%04d-%02d-%02d", year, month + 1, dayOfMonth);
+                        binding.strBirthdate.setText(formattedDate);
                     }
                 }, year, month, day);
                 datePicker.show();
@@ -81,58 +82,123 @@ public class ActivityStudentMain extends AppCompatActivity {
 
     }
 
-    private void fnAddToRest(View view) {
-        String strURL = "http://192.168.0.117/RESTAPI/rest_api.php";
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, strURL, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                JSONObject jsonObject = null;
-                try {
-                    jsonObject = new JSONObject(response);
-                    Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+//    private void fnAddToRest(View view) {
+//        String strURL = "http://192.168.0.117/RESTAPI/rest_api.php";
+//        RequestQueue requestQueue = Volley.newRequestQueue(this);
+//        StringRequest stringRequest = new StringRequest(Request.Method.POST, strURL, new Response.Listener<String>() {
+//            @Override
+//            public void onResponse(String response) {
+//                Log.d("fnAddToRest", "Response: " + response);
+//                try {
+//                    JSONObject jsonObject = new JSONObject(response);
+//                    Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                    Log.e("fnAddToRest", "JSON Exception: " + e.getMessage());
+//                }
+//            }
+////            @Override
+////            public void onResponse(String response) {
+////                JSONObject jsonObject = null;
+////                try {
+////                    jsonObject = new JSONObject(response);
+////                    Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+////
+////                } catch (JSONException e) {
+////                    e.printStackTrace();
+////                }
+////            }
+//
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                Log.e("fnAddToRest", "Volley Error: " + error.getMessage());
+//            }
+//        })
+//        {
+//
+//            @Override
+//            protected Map<String, String> getParams() throws AuthFailureError {
+//                String fullname = binding.strFullname.getText().toString();
+//                String studNo = binding.strStudNo.getText().toString();
+//                String email = binding.strEmail.getText().toString();
+//                String birth = binding.strBirthdate.getText().toString();
+//                String gender = "";
+//                String state = binding.spnState.getSelectedItem().toString();
+//
+//                if(binding.rbMale.isChecked()){
+//                    gender = binding.rbMale.getText().toString();
+//                }
+//                else if (binding.rbFemale.isChecked()) {
+//                    gender = binding.rbFemale.getText().toString();
+//                }
+//
+//                Map<String,String> params = new HashMap<>();
+//                params.put("selectFn", "fnSaveData");
+//                params.put("fullname", fullname);
+//                params.put("studNo", studNo);
+//                params.put("email", email);
+//                params.put("gender", gender);
+//                params.put("birthdate", birth);
+//                params.put("state", state);
+//
+//                Log.d("fnAddToRest", "Params:"+ params.toString());
+//                return params;
+//            }
+//        };
+//        requestQueue.add(stringRequest);
+//    }
+private void fnAddToRest(View view) {
+    String strURL = "http://192.168.0.117/RESTAPI/rest_api.php";
+    RequestQueue requestQueue = Volley.newRequestQueue(this);
+    StringRequest stringRequest = new StringRequest(Request.Method.POST, strURL, new Response.Listener<String>() {
+        @Override
+        public void onResponse(String response) {
+            Log.d("fnAddToRest", "Response: " + response);
+            try {
+                JSONObject jsonObject = new JSONObject(response);
+                Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+            } catch (JSONException e) {
+                e.printStackTrace();
+                Log.e("fnAddToRest", "JSON Exception: " + e.getMessage());
+            }
+        }
+    }, new Response.ErrorListener() {
+        @Override
+        public void onErrorResponse(VolleyError error) {
+            Log.e("fnAddToRest", "Volley Error: " + error.getMessage());
+        }
+    }) {
+        @Override
+        protected Map<String, String> getParams() throws AuthFailureError {
+            String fullname = binding.strFullname.getText().toString();
+            String studNo = binding.strStudNo.getText().toString();
+            String email = binding.strEmail.getText().toString();
+            String birth = binding.strBirthdate.getText().toString();
+            String gender = "";
+            String state = binding.spnState.getSelectedItem().toString();
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
+            if (binding.rbMale.isChecked()) {
+                gender = binding.rbMale.getText().toString();
+            } else if (binding.rbFemale.isChecked()) {
+                gender = binding.rbFemale.getText().toString();
             }
 
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
+            Map<String, String> params = new HashMap<>();
+            params.put("selectFn", "fnSaveData");
+            params.put("fullname", fullname);
+            params.put("studNo", studNo);
+            params.put("email", email);
+            params.put("gender", gender);
+            params.put("birthdate", birth);
+            params.put("state", state);
 
-            }
-        })
-        {
-
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                String fullname = binding.strFullname.getText().toString();
-                String studNo = binding.strStudNo.getText().toString();
-                String email = binding.strEmail.getText().toString();
-                String birth = binding.strBirthdate.getText().toString();
-                String gender = "";
-                String state = binding.spnState.getSelectedItem().toString();
-
-                if(binding.rbMale.isChecked()){
-                    gender = binding.rbMale.getText().toString();
-                }
-                else if (binding.rbFemale.isChecked()) {
-                    gender = binding.rbFemale.getText().toString();
-                }
-
-                Map<String,String> params = new HashMap<>();
-                params.put("selectFn", "fnSaveData");
-                params.put("fullname", fullname);
-                params.put("studNo", studNo);
-                params.put("email", email);
-                params.put("gender", gender);
-                params.put("birthdate", birth);
-                return params;
-            }
-        };
-        requestQueue.add(stringRequest);
-    }
+            Log.d("fnAddToRest", "Params: " + params.toString());
+            return params;
+        }
+    };
+    requestQueue.add(stringRequest);
+}
 
     private void fnAdd(View view) {
         String fullname = binding.strFullname.getText().toString();
