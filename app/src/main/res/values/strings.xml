@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Hi Buddy</string>
+    <string name="app_name">Expenses</string>
     <string name="user_name">Enter Your Username</string>
     <string name="user_pwd">Your Password</string>
     <string name="btn_login">Enter</string>
