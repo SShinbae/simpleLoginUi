@@ -76,9 +76,15 @@ public class ActivityRegister extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void calculateAge() {
-        String yearOfBirthString = binding.editTextDOB.getText().toString();
+   private void calculateAge() {
+    String yearOfBirthString = binding.editTextDOB.getText().toString();
 
+    if (yearOfBirthString.isEmpty()) {
+        Toast.makeText(this, "Please enter your year of birth", Toast.LENGTH_SHORT).show();
+        return;
+    }
+
+    try {
         int yearOfBirth = Integer.parseInt(yearOfBirthString);
         int currentYear = Calendar.getInstance().get(Calendar.YEAR);
         int age = currentYear - yearOfBirth;
@@ -90,7 +96,10 @@ public class ActivityRegister extends AppCompatActivity {
             String ageMessage = "You are " + age + " years old";
             binding.editTextDOB.setText(ageMessage);
         }
+    } catch (NumberFormatException e) {
+        Toast.makeText(this, "Invalid year of birth format", Toast.LENGTH_SHORT).show();
     }
+}
 
     @Override
     protected void onStart() {

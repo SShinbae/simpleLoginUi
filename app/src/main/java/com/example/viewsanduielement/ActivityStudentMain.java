@@ -149,7 +149,7 @@ public class ActivityStudentMain extends AppCompatActivity {
 //        requestQueue.add(stringRequest);
 //    }
 private void fnAddToRest(View view) {
-    String strURL = "http://192.168.0.117/RESTAPI/rest_api.php";
+    String strURL = "http://192.168.32.215/RESTAPI/rest_api.php";
     RequestQueue requestQueue = Volley.newRequestQueue(this);
     StringRequest stringRequest = new StringRequest(Request.Method.POST, strURL, new Response.Listener<String>() {
         @Override
@@ -157,7 +157,11 @@ private void fnAddToRest(View view) {
             Log.d("fnAddToRest", "Response: " + response);
             try {
                 JSONObject jsonObject = new JSONObject(response);
-                Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                if (jsonObject.has("message")) {
+                    Toast.makeText(getApplicationContext(), jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
+                } else {
+                    Log.e("fnAddToRest", "No 'message' key in JSON response");
+                }
             } catch (JSONException e) {
                 e.printStackTrace();
                 Log.e("fnAddToRest", "JSON Exception: " + e.getMessage());

@@ -43,7 +43,7 @@ public class SearchStudentActivity extends AppCompatActivity {
     
     private void fnSearch(View view) {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        String strURL = "http://192.168.165.215/RESTAPI/rest_api.php";
+        String strURL = "http://192.168.32.215/RESTAPI/rest_api.php";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, strURL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
